@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>gaphu.js test page</title>
+    <script src="jquery-1.4.3.min.js" type="text/javascript"></script>
+    <script src="gaphu-0.0.9.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="gaphu-0.0.9.css">
+
+    <style type="text/css">
+        body{
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        form{
+            margin-top: 40px; margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>gaphu.js test page</h1>
+
+<p>Please see <a href="http://www.nickdrummond.co.uk/gaphu.js/installation.html">the gaphu.js installation guide</a> for details.</p>
+
+    <table class="keys">
+        <tr><td>Ctrl/Alt+space</td><td>autocomplete</td></tr>
+        <tr><td>Up/Down</td><td>selection in autocomplete</td></tr>
+        <tr><td>Return</td><td>insert word from popup</td></tr>
+        <tr><td>Tab</td><td>replace current word with word from popup</td></tr>
+        <tr><td>Escape</td><td>cancel popup</td></tr>
+        <tr><td>Space</td><td>move to next word after autocomplete</td></tr>
+    </table>
+
+<form action="">
+    <textarea id="textarea" cols="50" rows="3"></textarea>
+</form>
+<script type="text/javascript">
+    // use below if you want to use a client-side parser/autocompleter
+    new ExpressionEditor("textarea", {parser: TestParser, autocomplete: TestAutocomplete});
+
+    // use below instead if you have a php enabled server
+    // new ExpressionEditor("textarea", {parser : "test-parse.php", autocomplete: "test-autocomplete.php"});
+</script>
+
+
+<h3>Debug</h3>
+<div id="debug" style="height: 100px; width: 400px; overflow-y: scroll; border: 1px solid black;"></div>
+
+<h3>Response</h3>
+<div id="xml" style="height: 100px; width: 400px; overflow-y: scroll; border: 1px solid black;"></div>
+
+</body>
+</html>
